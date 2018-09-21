@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+
+<config>
+
+  <window>
+    <FULLSCREEN fullscreen="false"/>
+    <BORDERLESS borderless="false"/>
+    <RESIZABLE resizable="true"/>
+    <FULLSCREEN_WINDOW fullscreen_window="false"/>
+    <TITLE title="MonkaS Game"/>
+    <WIDTH width="1024"/>
+    <HEIGHT height="768"/>
+    <SCALE scale="1"/>
+  </window>
+
+  <renderer></renderer>
+
+  <audio>
+    <MUSIC_VOLUME music_volume="40"/>
+    <FX_VOLUME fx_volume="40"/>
+  </audio>
+
+  <textures></textures>
+  
+</config>
