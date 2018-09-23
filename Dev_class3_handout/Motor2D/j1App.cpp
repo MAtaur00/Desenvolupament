@@ -152,6 +152,8 @@ void j1App::PrepareUpdate()
 void j1App::FinishUpdate()
 {
 	// TODO 1: This is a good place to call load / Save functions
+	Save();
+	Load();
 
 }
 

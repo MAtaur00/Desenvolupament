@@ -61,6 +61,16 @@ public:
 
 	// TODO 3: Create new virtual methods to Load and Save
 
+	virtual void SaveGame()
+	{
+
+	}
+
+	virtual void LoadGame()
+	{
+
+	}
+
 public:
 
 	p2SString	name;
