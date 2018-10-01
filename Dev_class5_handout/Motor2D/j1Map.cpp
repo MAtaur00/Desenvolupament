@@ -77,7 +77,8 @@ bool j1Map::CleanUp()
 
 	// TODO 2: clean up all layer data
 	// Remove all layers
-
+	
+	data.layers.clear();
 
 	// Clean up the pugui tree
 	map_file.reset();
@@ -127,6 +128,23 @@ bool j1Map::Load(const char* file_name)
 	// TODO 4: Iterate all layers and load each of them
 	// Load layer info ----------------------------------------------
 
+	pugi::xml_node layer;
+	for (layer = map_file.child("map").child("layer"); layer && ret; layer = layer.next_sibling("layer"))
+	{
+		MapLayer* set = new MapLayer();
+
+		if (ret == true)
+		{
+			ret = LoadLayer(layer, set);
+		}
+
+		if (ret == true)
+		{
+			ret = LoadLayer(layer, set);
+		}
+
+		data.layers.add(set);
+	}
 
 	if(ret == true)
 	{
@@ -292,6 +310,10 @@ bool j1Map::LoadTilesetImage(pugi::xml_node& tileset_node, TileSet* set)
 }
 
 // TODO 3: Create the definition for a function that loads a single layer
-//bool j1Map::LoadLayer(pugi::xml_node& node, MapLayer* layer)
-//{
-//}
+bool j1Map::LoadLayer(pugi::xml_node& node, MapLayer* layer)
+{
+	layer->name = node.child("name").attribute("value").as_string();
+	layer->height = node.child("height").attribute("value").as_int();
+	layer->width = node.child("width").attribute("value").as_int();
+	memset(nullptr, 0, 0);
+}
